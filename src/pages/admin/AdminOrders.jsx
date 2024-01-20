@@ -1,7 +1,5 @@
-import AdminMenu from '../../components/AdminMenu';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import toast from 'react-hot-toast';
 import { useAuth } from '../../context/authContext';
 import moment from 'moment';
 import { Select } from 'antd';
@@ -17,9 +15,8 @@ const AdminOrders = () => {
     'Delivered',
     'Cancel',
   ]);
-  // const [changeStatus, setCHangeStatus] = useState('');
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
 
   const getOrders = async () => {
     try {
@@ -36,12 +33,9 @@ const AdminOrders = () => {
 
   const handleChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(
-        `${API}/api/auth/order-status/${orderId}`,
-        {
-          status: value,
-        }
-      );
+      await axios.put(`${API}/api/auth/order-status/${orderId}`, {
+        status: value,
+      });
       getOrders();
     } catch (error) {
       console.log(error);

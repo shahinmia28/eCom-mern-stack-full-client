@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import API from '../components/Api';
 import Categories from './Categories';
@@ -7,7 +7,6 @@ import ProductCard from '../components/ProductCard';
 
 const CategoryProduct = () => {
   const params = useParams();
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
 

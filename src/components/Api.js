@@ -1,3 +1,5 @@
-const API = 'https://ecom-mern-stack-full.onrender.com';
+const API = process.env.REACT_APP_API_URL;
 export default API;
-// http://localhost:3001
+
+// console.log(process.env.REACT_APP_API_URL);
+// console.log(process.env.REACT_APP_API_URL_LOCAL);

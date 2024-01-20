@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/authContext';
 import API from '../../components/Api';
@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const getOrders = async () => {
     try {
       const { data } = await axios.get(`${API}/api/auth/orders`);

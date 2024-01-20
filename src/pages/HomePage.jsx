@@ -108,8 +108,7 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    if (page === 1) return;
-    loadMore();
+    if (page === 1) loadMore();
   }, [page]);
 
   useEffect(() => {

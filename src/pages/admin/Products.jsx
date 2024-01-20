@@ -6,13 +6,11 @@ import { Modal } from 'antd';
 import UpdateProduct from './UpdateProduct';
 import AdminMenu from '../../components/AdminMenu';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../context/authContext';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState({});
-  const [auth, setAuth] = useAuth();
 
   //getall products
   const getAllProducts = async () => {

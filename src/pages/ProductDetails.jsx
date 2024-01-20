@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import API from '../components/Api';
 import styled from 'styled-components';
 import ProductCard from '../components/ProductCard';
-import toast from 'react-hot-toast';
 import Amount from '../components/Amount';
 import { useCartContext } from '../context/cartContext2';
 
@@ -52,21 +51,7 @@ const ProductDetails = () => {
     }
   };
 
-  // const handleOrderNow = async () => {
-  //   setCart([...cart, orderedProduct]);
-  //   localStorage.setItem('cart', JSON.stringify([...cart, orderedProduct]));
-  //   navigate('/cart', {
-  //     state: orderedProduct,
-  //   });
-  // };
-  // const handleAddToCart = async () => {
-  //   setCart([...cart, orderedProduct]);
-  //   localStorage.setItem('cart', JSON.stringify([...cart, orderedProduct]));
-  //   toast.success('Item Added to cart');
-  // };
-
   //initial details
-
   useEffect(() => {
     if (params?.slug) getProduct();
   }, [params?.slug]);

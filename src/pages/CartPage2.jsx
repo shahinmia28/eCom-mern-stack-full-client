@@ -1,21 +1,20 @@
 import { useAuth } from '../context/authContext';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import API from '../components/Api';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Radio, Checkbox } from 'antd';
 import { useCartContext } from '../context/cartContext2';
 import Amount from '../components/Amount';
 
 const CartPage2 = () => {
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState([]);
-  const location = useLocation();
-  const { cart, clearCart, shipping_fee, total_price } = useCartContext();
+  const { cart, shipping_fee } = useCartContext();
   const { setDecrement, setIncrement, removeItem } = useCartContext();
 
   // set payment method
@@ -40,9 +39,9 @@ const CartPage2 = () => {
   let selectedProductForOrder = [];
   selectedProduct?.map((item) => {
     if (item) {
-      cart.filter((p) => {
+      return cart.filter((p) => {
         if (p.id === item) {
-          selectedProductForOrder.push(p);
+          return selectedProductForOrder.push(p);
         }
       });
     }
