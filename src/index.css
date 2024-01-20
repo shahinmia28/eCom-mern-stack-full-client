@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.google-font {
+  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+
+.bg-color {
+  background: linear-gradient(to bottom, #ecfeff 0%, #bffbff 50%, #ecfeff 100%);
+}
+.bg-d-color {
+  background: linear-gradient(145deg, #ffffff 0%, #bffbff 50%, #ffffff 100%);
+  /* align-items: ; */
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0839699d;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0839699d;
+  border-radius: 5px;
+}
+/* Small Screen  */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 13px;
+  }
+  label {
+    font-size: 13px;
+  }
+  input {
+    font-size: 13px;
+  }
+  .change-email {
+    font-size: 13px;
+  }
+}
