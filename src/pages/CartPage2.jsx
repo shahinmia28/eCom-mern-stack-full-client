@@ -105,7 +105,11 @@ const CartPage2 = () => {
       );
       if (data?.success) {
         // clearCart();
-        navigate('/dashboard/user/orders');
+        navigate(
+          auth.user.role === 1
+            ? '/dashboard/admin/orders'
+            : '/dashboard/user/orders'
+        );
         toast.success(data?.message);
       } else {
         toast.error(data?.message);
@@ -240,10 +244,10 @@ const CartPage2 = () => {
                   value={paymentMethod}
                   className='d-flex flex-column justify-content-between align-items-start'
                 >
-                  <Radio value={0} className='my-2'>
+                  <Radio value={1} className='my-2'>
                     Cash On Delivery
                   </Radio>
-                  <Radio value={1}>Payment Online</Radio>
+                  <Radio value={0}>Payment Online</Radio>
                 </Radio.Group>
               </div>
               {auth?.user?.address ? (
@@ -253,7 +257,7 @@ const CartPage2 = () => {
                       <button
                         className='btn btn-primary text-uppercase'
                         onClick={() =>
-                          paymentMethod === 0
+                          paymentMethod === 1
                             ? handleCheckOutWithOutPayment()
                             : handleCheckOutWithPayment()
                         }
