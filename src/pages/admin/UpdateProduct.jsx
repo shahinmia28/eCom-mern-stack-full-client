@@ -125,6 +125,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
               value={product.category}
               onChange={onChange}
               className='form-select'
+              required
             >
               <option value=''>Select a Category</option>
               {categories?.map((c) => (
@@ -193,6 +194,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
               placeholder='write a name'
               className='form-control'
               onChange={onChange}
+              required
             />
           </div>
           <div className='mb-3'>
@@ -206,6 +208,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
               placeholder='write a description'
               className='form-control'
               onChange={onChange}
+              required
             />
           </div>
           <div className='row mb-3'>
@@ -221,6 +224,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
                 placeholder={`Product's Price`}
                 className='form-control'
                 onChange={onChange}
+                required
               />
             </div>
             <div className='col-12 col-md-3'>
@@ -235,6 +239,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
                 placeholder={`Product's Quantity`}
                 className='form-control'
                 onChange={onChange}
+                required
               />
             </div>
             <div className='col-12 col-md-3'>
@@ -248,6 +253,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
                 placeholder='Shipping Coast'
                 className='form-control'
                 onChange={onChange}
+                required
               />
             </div>
             <div className='col-12 col-md-3'>
@@ -261,6 +267,7 @@ const UpdateProduct = ({ selected, setVisible, getAllProducts }) => {
                 placeholder='Color'
                 className='form-control'
                 onChange={onChange}
+                required
               />
             </div>
           </div>

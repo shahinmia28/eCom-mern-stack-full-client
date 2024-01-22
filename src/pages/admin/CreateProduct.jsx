@@ -62,8 +62,8 @@ const CreateProduct = () => {
       productData.append('quantity', product.quantity);
       productData.append('shipping', product.shipping);
       productData.append('color', product.color);
-
       productData.append('category', product.category);
+
       if (product.photo) {
         productData.append('image', product.photo);
       }
@@ -114,6 +114,7 @@ const CreateProduct = () => {
                     value={product.category}
                     onChange={onChange}
                     className='form-select'
+                    required
                   >
                     <option value=''>Select a Category</option>
                     {categories?.map((c) => (
@@ -133,6 +134,7 @@ const CreateProduct = () => {
                         accept='image/*'
                         onChange={handleImage}
                         hidden
+                        required
                       />
                     </label>
                     {product.photo && (
@@ -182,6 +184,7 @@ const CreateProduct = () => {
                     placeholder='write a name'
                     className='form-control'
                     onChange={onChange}
+                    required
                   />
                 </div>
                 <div className='mb-3'>
@@ -195,6 +198,7 @@ const CreateProduct = () => {
                     placeholder='write a description'
                     className='form-control'
                     onChange={onChange}
+                    required
                   />
                 </div>
                 <div className='row mb-3'>
@@ -210,6 +214,7 @@ const CreateProduct = () => {
                       placeholder={`Product's Price`}
                       className='form-control'
                       onChange={onChange}
+                      required
                     />
                   </div>
                   <div className='col-12 col-md-3'>
@@ -224,6 +229,7 @@ const CreateProduct = () => {
                       placeholder={`Product's Quantity`}
                       className='form-control'
                       onChange={onChange}
+                      required
                     />
                   </div>
                   <div className='col-12 col-md-3'>
@@ -237,6 +243,7 @@ const CreateProduct = () => {
                       placeholder='Shipping Coast'
                       className='form-control'
                       onChange={onChange}
+                      required
                     />
                   </div>
                   <div className='col-12 col-md-3'>
@@ -250,6 +257,7 @@ const CreateProduct = () => {
                       placeholder='Color'
                       className='form-control'
                       onChange={onChange}
+                      required
                     />
                   </div>
                 </div>
